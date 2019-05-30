@@ -1,1 +1,5 @@
-"[{'name':'econom','price': 600},{'name':'standart','price': 600},{'name':'standart twin','price': 600},{'name':'luxe','price': 600},{'name':'famely luxe','price': 600},{'name':'Miracle Suite','price': 600},{'name':'Президентський Люкс','price': 600}]"
+{"rooms":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}

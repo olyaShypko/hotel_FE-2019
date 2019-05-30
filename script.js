@@ -181,8 +181,23 @@ function closePopUP(){
 
   });
 }
-$(document).ready(function() {
 
+//load JSON
+// var str = "rooms.json";
+// var req ;
+//
+//
+// req = new window.XMLHttpRequest();
+// req.open("GET", str, true);
+// req.send(null);
+//
+// console.log(req.response);
+var rooms;
+$(document).ready(function() {
+  $.getJSON('rooms.json', function(data){
+            rooms = data.rooms;
+            console.log(rooms,'rooms');
+         });
 
 
 });
