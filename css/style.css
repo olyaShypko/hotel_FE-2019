@@ -443,3 +443,21 @@ footer{
     width: 50%;
   }
 }
+@media screen and (max-width: 500px) {
+  header{
+    flex-direction: column;
+    }
+  nav{
+   justify-content: space-around;
+  }
+  .logo_link{
+    display: block;
+    text-align: center;
+  }
+  .title_contact{
+    font-size: 50px;
+  }
+  .gallery__item{
+    width: 100%;
+  }
+}
