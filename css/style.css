@@ -42,7 +42,12 @@ nav{
   margin-right: 20px;
   cursor: pointer;
 }
-
+.menu__items a{
+  color: #fff;
+}
+.menu__items a:active{
+  color:#000;
+}
 
 /*----------BODY------------*/
 .main-slider__container{
@@ -81,8 +86,12 @@ position: relative
   display: block;
   text-align: center;
 }
-.main-slider img{
+.main-slider div{
   width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
 }
 .masters-room__items{
   width: 90%;
@@ -254,61 +263,18 @@ footer{
   padding-bottom: 52px;
 }
 .gallery__item{
-  width: 300px;
+  width: 30%;
   height: 300px;
   background: url('../img/2_2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 5px;
+  margin: 10px;
   cursor: pointer;
 }
-.gallery__item:nth-child(2){
-  background: url('../img/1.jpg');
+.gallery__item:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.gallery__item:nth-child(3){
-  background: url('../img/1 (1).jpg');
-}
-.gallery__item:nth-child(4){
-  background: url('../img/2_2.jpg');
-}
-.gallery__item:nth-child(5){
-  background: url('../img/2_3.jpg');
-}
-.gallery__item:nth-child(6){
-  background: url('../img/2_4.jpg');
-}
-.gallery__item:nth-child(7){
-  background: url('../img/2_BymTpk7.jpg');
-}
-.gallery__item:nth-child(8){
-  background: url('../img/3_giiiTs6.jpg');
-}
-.gallery__item:nth-child(9){
-  background: url('../img/4_rQitiNy.jpg');
-}
-.gallery__item:nth-child(10){
-  background: url('../img/5_6AvEgsa.jpg');
-}
-.gallery__item:nth-child(11){
-  background: url('../img/6_r4oQd0M.jpg');
-}
-.gallery__item:nth-child(12){
-  background: url('../img/8_cduDbhK.jpg');
-}
-.gallery__item:nth-child(13){
-  background: url('../img/crown-064.jpg');
-}
-.gallery__item:nth-child(14){
-  background: url('../img/hotel-zolota-korona-truskavets-06.jpg');
-}
-.gallery__item:nth-child(15){
-  background: url('../img/hotel-zolota-korona-truskavets-10.jpg');
-}
-.gallery__item:nth-child(16){
-  background: url('../img/restaurant-22.jpg');
-}
-
 .masters-room__items.gallery__items{
   flex-wrap: wrap;
   max-width: 1250px;
@@ -331,9 +297,125 @@ footer{
   display: block;
   width: 35px;
   height: 35px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.75);
   top: 20px;
   right: 20px;
+  cursor: pointer;
+}
+#pop-up__close:after{
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../img/icons/close.svg');
+  display: block;
+  height: 90%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.gallery_pagination{
+  padding: 25px 0;
+  text-align: center;
+  
+}
+.gallery_pagination a{
+  color: #000;
+}
+.gallery_pagination a:hover{
+  border-bottom: 1px solid #000;
+}
+
+.masters-room__items.rooms_items{
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+.filter_rooms{
+  position: fixed;
+  top: 50%;
+  left: 0;
+}
+.rooms_item{
+  margin: 25px;
+}
+.rooms_item:hover .rooms-item__img{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.room_name{
+  padding: 10px 0;
+  font-size: 20px;
+}
+.room_price{
+  font-size: 18px;
+}
+.room_price span{
+  font-size: 22px;
+  color: #B8A181;
+  display: inline-block;
+  padding-left: 10px
+}
+.room_bttn{
+  display: inline-block;
+  padding: 10px 20px;
+  background: #B8A181;
+  border: 1px solid #B8A181;
+  color: #fff;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.room_bttn:hover{
+  color: #B8A181;
+  background: #fff;
+}
+.rooms-item__img{
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.show_room{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background: #fff;
+  z-index: 11;
+}
+.show_room-main_img{
+  width: 100%;
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.show_room_imgs{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.show_room_imgs li{
+  cursor: pointer;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/standart/zolota-korona-truskavets-semi-singlebed-03.jpg');
+  border: 3px solid #fff;
+  margin: 10px;
+}
+#map{
+    width: 100%;
+    height: 350px;
 }
 @media screen and (max-width: 900px) {
   .history__elements{
@@ -356,5 +438,8 @@ footer{
   }
   .contact__item{
     width: 90%;
+  }
+  .gallery__item{
+    width: 50%;
   }
 }

@@ -19,7 +19,7 @@ $(document).ready(function() {
 //pagination
 
 var current_page = 1;
-var records_per_page = 10;
+var records_per_page = 9;
 
 var objJson = [{
         adName: "img/1.jpg"
@@ -182,22 +182,3 @@ function closePopUP(){
   });
 }
 
-//load JSON
-// var str = "rooms.json";
-// var req ;
-//
-//
-// req = new window.XMLHttpRequest();
-// req.open("GET", str, true);
-// req.send(null);
-//
-// console.log(req.response);
-var rooms;
-$(document).ready(function() {
-  $.getJSON('rooms.json', function(data){
-            rooms = data.rooms;
-            console.log(rooms,'rooms');
-         });
-
-
-});

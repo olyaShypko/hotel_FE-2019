@@ -2,20 +2,17 @@
 <html lang="en">
 
 <head>
-    <base href="/">
+     <base href="/">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Hotel</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
     <link href='css/style.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
 
 
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="script.js"></script>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="room.js"></script>
 
 </head>
 
@@ -35,10 +32,25 @@
     <div class="history__wrapp">
       <p class="title_contact">Rooms</p>
     </div>
-    <div class="masters-room__items">
-      <div class="gallery__item"></div>
+    <div class="filter_rooms">
+      <div class="">
+      <p onclick="litlePrise()"> від менших до більших</p>
+      <p onclick="biggestPrise()"> від менших до більших</p>
+      </div>
+      
     </div>
-
+      
+    <div class="masters-room__items rooms_items" id="rooms_items"></div>
+<!--<div class="show_room">
+  <div class="show_room-main_img" id="show_room-main_img" style="background-image: url('img/standart/zolota-korona-truskavets-semi-singlebed-03.jpg');">
+    <ul class="show_room_imgs">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>-->
 </main>
 <footer>
   <div class="footer__social">
