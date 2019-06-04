@@ -2,17 +2,21 @@
 <html lang="en">
 
 <head>
-     <base href="/">
+    <base href="/">
+	<m <base href="/">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Hotel</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
     <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
 
 
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="room.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="app/gallery/gallery.js"></script>
 
 </head>
 
@@ -21,36 +25,26 @@
     <a href="" class="logo_link"><img src="img/logo.png"></a>
     <nav>
       <ul class="menu__items">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../room/rooms.html">Rooms</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main class="main_contact">
     <div class="history__wrapp">
-      <p class="title_contact">Rooms</p>
+      <p class="title_contact">Gallery</p>
     </div>
-    <div class="filter_rooms">
-      <div class="">
-      <p onclick="litlePrise()"> від менших до більших</p>
-      <p onclick="biggestPrise()"> від менших до більших</p>
-      </div>
-      
-    </div>
-      
-    <div class="masters-room__items rooms_items" id="rooms_items"></div>
-<!--<div class="show_room">
-  <div class="show_room-main_img" id="show_room-main_img" style="background-image: url('img/standart/zolota-korona-truskavets-semi-singlebed-03.jpg');">
-    <ul class="show_room_imgs">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-</div>-->
+
+<div class="masters-room__items gallery__items" id="listingTable"></div>
+<div class="gallery_pagination">
+  <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+  <a href="javascript:nextPage()" id="btn_next">Next</a>
+  page: <span id="page"></span>
+</div>
+
+
 </main>
 <footer>
   <div class="footer__social">

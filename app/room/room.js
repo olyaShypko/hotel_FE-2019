@@ -2,7 +2,6 @@
 var rooms;
 console.log(rooms);
 $(document).ready(function() {
-    console.log(rooms);
   $.getJSON('cabinet.json', function(data){
       console.log( "success" );
             rooms = data.rooms;
@@ -30,7 +29,7 @@ $(document).ready(function() {
                 for(i=0;i< rooms.length;i++){
                    filtrRomms.push(rooms[i].price);
                 }
-                filtrRomms.sort(function(a,b){ 
+                filtrRomms.sort(function(a,b){
                     return (a - b);
                 });
                for(j = 0;j< filtrRomms.length;j++){
@@ -59,7 +58,7 @@ $(document).ready(function() {
                 for(i=0;i< rooms.length;i++){
                    filtrRomms.push(rooms[i].price);
                 }
-                filtrRomms.sort(function(a,b){ 
+                filtrRomms.sort(function(a,b){
                     return (a - b);
                 });
                 filtrRomms.reverse();
