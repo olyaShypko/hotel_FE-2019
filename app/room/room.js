@@ -18,12 +18,11 @@ function renderRooms() {
 }
 
 
-
-
 function createRoom(room) {
-
+   
     const item = document.createElement('div');
     item.classList.add('rooms_item');
+     
 
     const image = document.createElement('div');
     image.classList.add('rooms-item__img');
@@ -38,8 +37,11 @@ function createRoom(room) {
     price.innerHTML = `Price:<span>${ room.price }UAH</span>`;
 
     const showBtn =document.createElement('div');
-    showBtn.onclick = function(room){
-      console.log(room);
+    showBtn.dataset.id = room.id;
+    showBtn.onclick = function(e){
+        var data_id = e.target.getAttribute('data-id');
+    
+        findRoom(data_id,rooms);
     }
     showBtn.classList.add('room_bttn');
     showBtn.innerText = 'Show room';
@@ -73,7 +75,38 @@ function lowerPrice(){
 
 //-------------------------
 
+function findRoom(id,rooms){
+    let itemRomm = rooms.find(x => x.id == id); //find object for popup
+   console.log();
+   document.body.append(createPopUp(itemRomm));
+}
 
-function createPopUp(element) {
+function createPopUp(item) {
+    
+    const popUp = document.createElement('div');
+    popUp.classList.add('pop-up__wrapp','show_room');
 
+    const mainImg = document.createElement('div');
+    mainImg.classList.add('show_room-main_img');
+    mainImg.style['background-image'] = `url(${ item.img })`;
+
+    const closeBtn = document.createElement('div');
+    closeBtn.classList.add('show_room-main_img');
+    closeBtn.onclick = function(){
+        closePopUP();
+        
+    }
+    
+    popUp.append(mainImg);
+    popUp.append(closeBtn);
+
+    return popUp;
+}
+
+function closePopUP(){
+  $(document).ready(function() {
+    $('.pop-up__wrapp').remove();
+
+
+  });
 }
