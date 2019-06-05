@@ -19,10 +19,10 @@ function renderRooms() {
 
 
 function createRoom(room) {
-   
+
     const item = document.createElement('div');
     item.classList.add('rooms_item');
-     
+
 
     const image = document.createElement('div');
     image.classList.add('rooms-item__img');
@@ -40,7 +40,7 @@ function createRoom(room) {
     showBtn.dataset.id = room.id;
     showBtn.onclick = function(e){
         var data_id = e.target.getAttribute('data-id');
-    
+
         findRoom(data_id,rooms);
     }
     showBtn.classList.add('room_bttn');
@@ -75,14 +75,16 @@ function lowerPrice(){
 
 //-------------------------
 
+
+//---------------------PopUp
+
 function findRoom(id,rooms){
     let itemRomm = rooms.find(x => x.id == id); //find object for popup
-   console.log();
    document.body.append(createPopUp(itemRomm));
 }
 
 function createPopUp(item) {
-    
+
     const popUp = document.createElement('div');
     popUp.classList.add('pop-up__wrapp','show_room');
 
@@ -91,14 +93,24 @@ function createPopUp(item) {
     mainImg.style['background-image'] = `url(${ item.img })`;
 
     const closeBtn = document.createElement('div');
-    closeBtn.classList.add('show_room-main_img');
+    closeBtn.classList.add('pop-up__close');
     closeBtn.onclick = function(){
-        closePopUP();
-        
+      closePopUP();
     }
-    
+
+    const popName = document.createElement('p');
+    popName.classList.add('room_name');
+    popName.innerText = item.name;
+
+    const popPrice = document.createElement('p');
+    popPrice.classList.add('room_price');
+    popPrice.innerHTML = `Price:<span>${ item.price }UAH</span>`;
+
+
     popUp.append(mainImg);
     popUp.append(closeBtn);
+    popUp.append(popName);
+    popUp.append(popPrice);
 
     return popUp;
 }
@@ -110,3 +122,5 @@ function closePopUP(){
 
   });
 }
+
+//---------------
