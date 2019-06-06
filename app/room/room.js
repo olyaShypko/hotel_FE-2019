@@ -12,7 +12,6 @@ function renderRooms() {
     roomsContainer.empty();
 
     rooms.forEach((room) => {
-      console.log(room)
         roomsContainer.append(createRoom(room));
     });
 }
